@@ -10,7 +10,7 @@ const App = () => {
     const formattedData = data.split(',').map(item => item.trim());
     console.log('Sending data:', formattedData); // Log the data being sent
     try {
-        const res = await axios.post('http://localhost:5000/bfhl', {
+        const res = await axios.post('https://restapi-wobh.onrender.com/bfhl', {
             data: formattedData
         });
         console.log('Response from server:', res.data); // Log the response from server
@@ -24,7 +24,7 @@ const App = () => {
 
   const handleGet = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/bfhl');
+      const res = await axios.get('https://restapi-wobh.onrender.com/bfhl');
       setResponse(res.data);
     } catch (err) {
       console.error('Error fetching data:', err);
